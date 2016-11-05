@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        
+        
+        <f:event type="preRenderView" listener="#{gerenteUsuario.buscarAnuncio()}" />   
+    </h:head>
+    <h:body>
+      
+        
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Fazer Proposta"/></h1>
+                <p:panelGrid columns="2">
+                     <p:outputLabel value="PropostaDescricao:" for="propostaDescricao" />
+                    <p:inputTextarea rows="4" cols="30" id="propostaDescricao" value="#{gerenteUsuario.proposta.propostaDescricao}" title="PropostaDescricao" />
+                    <p:outputLabel value="PropostaValor:" for="propostaValor" />
+                    <p:inputText id="propostaValor" value="#{gerenteUsuario.proposta.propostaValor}" title="PropostaValor" />
+                    <p:outputLabel value="PropostaData:" for="propostaData" />
+                    <p:inputText id="propostaData" value="#{gerenteUsuario.proposta.propostaData}" title="PropostaData" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </p:inputText>
+                    <p:outputLabel value="PropostaCategoria:" for="propostaCategoria" />
+                    <p:inputText id="propostaCategoria" value="#{gerenteUsuario.proposta.propostaCategoria}" title="PropostaCategoria" />
+              
+                </p:panelGrid>
+            
+                    <h:commandLink value="Enviar Proposta" action="#{gerenteUsuario.fazerProposta()}"></h:commandLink>
+              
+            </h:form>
+        </f:view>
+
+        
+    </h:body>
+</html>
+

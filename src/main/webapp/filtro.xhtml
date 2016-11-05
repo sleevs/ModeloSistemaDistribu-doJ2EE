@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       
+         <h:outputStylesheet library="css" name="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css"  />
+
+        <h:outputStylesheet library="css" name="http://v4.pingendo.com/assets/bootstrap/themes/default.css"  />
+      
+        
+        
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+
+
+ <!-- BARRA DE FERRAMENTAS DO TOPO DA PAGINA  -->
+ 
+ 
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs" draggable="true">
+            
+			
+			
+			<li class="nav-item">
+              <a href="index.html" class="active nav-link">Home</a>
+            </li>
+            
+			   <li class="nav-item">
+              <a href="conteudoFiltro.html" class="nav-link" >Categorias</a>
+            </li>
+			
+             <li class="nav-item">
+              <a href="conteudoFiltro.html" class="nav-link" >Colaboradores</a>
+            </li>
+            
+			<li class="nav-item">
+              <a href="anunciante.html" class="nav-link">Portifólios</a>
+            </li>
+			   
+				
+			
+			  <li class="nav-item">
+              <a href="areaUsuario.html" class="nav-link">Area do Usuário</a>
+            </li>
+			
+			
+	
+					  <li class="nav-item">
+              <a href="servicos.html" class="nav-link">Serviços</a>
+            </li>
+		
+
+
+		
+			
+				   <li class="nav-item">
+              <a href="suporte.html" class="nav-link">Suporte</a>
+            </li>
+			
+			
+				   <li class="nav-item">
+              <a href="tutorial.html" class="nav-link">App</a>
+            </li>
+			
+		
+			
+			  <li class="nav-item">
+              <a href="login.html" class="nav-link">Login</a>
+            </li>
+			
+			
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+ <!-- BANNER  DE APRESENTACAO DA PAGINA -->
+  
+  <div class="section section-fill-height section-opaque-dark text-xs-center" draggable="true">
+
+  <div class="background-image" style="background-image: url(&quot;http://v4.pingendo.com/assets/photos/business/cover-1.jpg&quot;);"></div>
+
+    <div class="container">
+
+	<div class="row">
+      
+	  <div class="col-md-12">
+        
+      	<h1 class="display-1 pi-draggable pi-item text-inverse" draggable="true">VIVO DE BICO</h1>
+          <a href="#" class="btn btn-lg btn-secondary-outline m-y-lg">Quero Anúnciar</a>
+          <a href="#" class="btn btn-lg btn-secondary-outline m-y-lg">Quero Trabalhar</a>
+        
+		
+		</div>
+      </div>
+    </div>
+  </div>
+       
+        
+           
+                    
+                    <f:view>
+
+
+                        <h:form>
+                            <h1><h:outputText value="Criar Nova Conta"/></h1>
+                            <p:panelGrid columns="2">
+                         
+
+                                <p:outputLabel value="Nome:" for="contaNome" />
+                                <p:inputText id="contaNome" value="#{gerenteConta.conta.contaNome}" title="ContaNome" />
+                                <p:outputLabel value="Sobrenome:" for="contaSobrenome" />
+                                <p:inputText id="contaSobrenome" value="#{gerenteConta.conta.contaSobrenome}" title="ContaSobrenome" />
+
+                                   <p:outputLabel value="Tipo" for="contaTipo" />
+                                   <p:selectOneMenu  id="contaTipo" value="#{gerenteConta.conta.contaTipo}" >
+                                    <f:selectItem itemValue="PROFISSIONAL" itemLabel="Profissional" />
+                                    <f:selectItem itemValue="CONTRATANTE" itemLabel="Contratante" />
+                                </p:selectOneMenu>
+                             
+                                <p:outputLabel value="Categoria:" for="contaCategoria" />
+                                <p:inputText id="contaCategoria" value="#{gerenteConta.conta.contaCategoria}" title="ContaCategoria" />
+                                <p:outputLabel value="Email:" for="contaEmail" />
+                                <p:inputText id="contaEmail" value="#{gerenteConta.conta.contaEmail}" title="ContaEmail" />
+                                <p:outputLabel value="Senha:" for="contaSenha" />
+                                <p:inputText id="contaSenha" value="#{gerenteConta.conta.contaSenha}" title="ContaSenha" />
+                              
+                                
+                                <p:outputLabel value="Genero:" for="contaSexo" />
+                                <p:selectOneMenu id="contaSexo" value="#{gerenteConta.conta.contaSexo}"  >
+                                    <f:selectItem itemValue="MASCULINO" itemLabel="Masculino" />
+                                    <f:selectItem itemValue="FEMININO" itemLabel="Feminino" />
+                                </p:selectOneMenu>
+                       
+                                <p:outputLabel value="Endereco:" for="contaEndereco" />
+                                <p:inputText id="contaEndereco" value="#{gerenteConta.conta.contaEndereco}" title="ContaEndereco" />
+                                <p:outputLabel value="Bairro:" for="contaBairro" />
+                                <p:inputText id="contaBairro" value="#{gerenteConta.conta.contaBairro}" title="ContaBairro" />
+                                <p:outputLabel value="Cidade:" for="contaCidade" />
+                                <p:inputText id="contaCidade" value="#{gerenteConta.conta.contaCidade}" title="ContaCidade" />
+                                <p:outputLabel value="Uf:" for="contaUf" />
+                                <p:inputText id="contaUf" value="#{gerenteConta.conta.contaUf}" title="ContaUf" />
+                           
+                                </p:panelGrid>
+                        
+                        
+                            <h:commandButton value="SALVAR" action="#{gerenteConta.criarConta()}" ></h:commandButton>
+                        </h:form>
+                    </f:view>
+
+
+
+                    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </h:body>
+
+</html>
+

@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <h:outputStylesheet library="css" name="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css"  />
+
+        <h:outputStylesheet library="css" name="http://v4.pingendo.com/assets/bootstrap/themes/default.css"  />
+     
+
+        <f:event type="preRenderView" listener="#{gerenteUsuario.buscarConta()}"/>
+    </h:head>
+    <h:body>
+        
+        
+        
+        
+
+
+ <!-- BARRA DE FERRAMENTAS DO TOPO DA PAGINA  -->
+ 
+ 
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs" draggable="true">
+            
+			
+			
+			<li class="nav-item">
+              <a href="index.html" class="active nav-link">Home</a>
+            </li>
+            
+			   <li class="nav-item">
+              <a href="conteudoFiltro.html" class="nav-link" >Categorias</a>
+            </li>
+			
+             <li class="nav-item">
+              <a href="conteudoFiltro.html" class="nav-link" >Colaboradores</a>
+            </li>
+            
+			<li class="nav-item">
+              <a href="anunciante.html" class="nav-link">Portifólios</a>
+            </li>
+			   
+				
+			
+			  <li class="nav-item">
+              <a href="areaUsuario.html" class="nav-link">Area do Usuário</a>
+            </li>
+			
+			
+	
+					  <li class="nav-item">
+              <a href="servicos.html" class="nav-link">Serviços</a>
+            </li>
+		
+
+
+		
+			
+				   <li class="nav-item">
+              <a href="suporte.html" class="nav-link">Suporte</a>
+            </li>
+			
+			
+				   <li class="nav-item">
+              <a href="tutorial.html" class="nav-link">App</a>
+            </li>
+			
+		
+			
+			  <li class="nav-item">
+              <a href="login.html" class="nav-link">Login</a>
+            </li>
+			
+			
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+ <!-- BANNER  DE APRESENTACAO DA PAGINA -->
+  
+  <div class="section section-fill-height section-opaque-dark text-xs-center" draggable="true">
+
+  <div class="background-image" style="background-image: url(&quot;http://v4.pingendo.com/assets/photos/business/cover-1.jpg&quot;);"></div>
+
+    <div class="container">
+
+	<div class="row">
+      
+	  <div class="col-md-12">
+        
+      	<h1 class="display-1 pi-draggable pi-item text-inverse" draggable="true">VIVO DE BICO</h1>
+          <a href="#" class="btn btn-lg btn-secondary-outline m-y-lg">Quero Anúnciar</a>
+          <a href="#" class="btn btn-lg btn-secondary-outline m-y-lg">Quero Trabalhar</a>
+        
+		
+		</div>
+      </div>
+    </div>
+  </div>
+
+
+
+ <p:panelGrid columns="2">
+
+
+     <f:facet name="header">
+         OPÇÃO :                        
+         <p:commandButton value="DESLOGAR" actionListener="#{gerenteUsuario.deslogar()}" action="/index.html"></p:commandButton>
+ 
+     </f:facet>
+
+
+
+     <f:facet name="header">
+         <p:graphicImage name="demo/images/misc/kobe.png" />
+     </f:facet>
+
+     <h:outputText value="Nome:" />
+     <h:outputText value="#{gerenteUsuario.conta.contaNome}" />
+
+
+     <h:outputText value="Id:" />
+     <h:outputText value="#{gerenteUsuario.conta.contaId}" />
+
+     <h:outputText value="Email" />
+     <h:outputText value="#{gerenteUsuario.conta.contaEmail}" />
+
+     <h:outputText value="Tipo:" />
+     <h:outputText value="#{gerenteUsuario.conta.contaTipo}" />
+ </p:panelGrid>
+
+
+
+ <f:view>
+
+
+     <h:form>
+         <p:panelGrid columns="2">
+
+
+             <h:outputText value="Identificador" />
+             <h:outputText value="#{gerenteUsuario.anuncio.anuncioId}" />
+
+
+             <h:outputText value="Tipo:" />
+             <h:outputText value="#{gerenteUsuario.anuncio.anuncioTipo}" />
+
+             <h:outputText value="Conta responsavel" />
+             <h:outputText value="#{gerenteUsuario.anuncio.contaContaId}" />
+
+             <h:outputText value="Descricao:" />
+             <h:outputText value="#{gerenteUsuario.anuncio.anuncioDescricao}" />
+
+             <f:facet name="header">
+                 Opções
+
+                 <h:commandLink  value="EDITAR ANUNCIO" action="#{gerenteUsuario.editarAnuncio(anuncio)}"/> 
+             </f:facet>
+
+
+         </p:panelGrid>
+
+
+
+
+
+     </h:form>
+
+ </f:view>
+        
+        
+        
+        
+
+ <f:view>
+
+
+     <h:form>
+         <h1><h:outputText value="List"/></h1>
+         <p:dataTable value="#{gerenteUsuario.buscarTodosAnuncios()}" var="item">
+             
+             <p:column>
+                 <f:facet name="header">
+                     Opções
+                 </f:facet>
+
+                 <p:commandButton value="Modal EDIT" type="button" action="#{gerenteUsuario.editarAnuncio(item)}" onclick="PF('dlg2').show();" ></p:commandButton>
+ 
+
+                 <h:commandLink  value="EDITAR ANUNCIO" action="#{gerenteUsuario.editarAnuncio(item)}" ></h:commandLink> 
+
+             </p:column>
+
+
+
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioId"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioId}"/>
+             </p:column>
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioTipo"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioTipo}"/>
+             </p:column>
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioCategoria"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioCategoria}"/>
+             </p:column>
+           
+             
+             
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioTipoPagamento"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioTipoPagamento}"/>
+             </p:column>
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioValor"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioValor}"/>
+             </p:column>
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioDescricao"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioDescricao}"/>
+             </p:column>
+         
+             
+             
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioNivel"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioNivel}"/>
+             </p:column>
+             
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioEstatus"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioEstatus}"/>
+             </p:column>
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioRank"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioRank}"/>
+             </p:column>
+          
+             
+             
+             
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioEndereco"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioEndereco}"/>
+             </p:column>
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="AnuncioBeneficio"/>
+                 </f:facet>
+                 <h:outputText value="#{item.anuncioBeneficio}"/>
+             </p:column>
+      
+             
+             
+             <p:column>
+                 <f:facet name="header">
+                     <h:outputText value="ContaContaId"/>
+                 </f:facet>
+                 <h:outputText value="#{item.contaContaId}"/>
+             </p:column>
+    
+          
+         
+         </p:dataTable>
+         
+            <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="500" width="600">
+     
+                <p:panelGrid columns="2" >
+       
+                    
+                       
+                    <p:outputLabel  id="anuncioId" value="#{gerenteUsuario.anuncio.anuncioId}" title="anuncioId" />
+                 
+             
+                      <p:outputLabel value="Titulo:" for="anuncioTitulo" />
+                    <p:inputText id="anuncioTitulo" value="#{gerenteUsuario.anuncio.anuncioTitulo}" title="AnuncioTitulo" />
+                   
+                    
+                    <p:outputLabel value="Tipo:" for="anuncioTipo" />
+                 <p:selectOneMenu id="anuncioTipo" value="#{gerenteUsuario.anuncio.anuncioTipo}"  >
+                     <f:selectItem itemValue="DIARIA" itemLabel="Diária" />
+                     <f:selectItem itemValue="MENSAL" itemLabel="Mensal" />
+                     <f:selectItem itemValue="QUINZENA" itemLabel="Quinzenal" />
+                     <f:selectItem itemValue="PREÇO FIXO" itemLabel="Moto" />
+                     <f:selectItem itemValue="PROJETO" itemLabel="Caminhão" />
+                     <f:selectItem itemValue="CLT" itemLabel="CLT" />
+                     <f:selectItem itemValue="FREELANCER" itemLabel="Freelancer" />
+                     <f:selectItem itemValue="PESSOA JURIDICA" itemLabel="Pessoa Jurídica" />
+                    </p:selectOneMenu>
+                    
+                    
+                    <p:outputLabel value="Categoria:" for="anuncioCategoria:" />
+                    <p:selectOneMenu id="anuncioCategoria" value="#{gerenteUsuario.anuncio.anuncioCategoria}"  >
+                        <f:selectItem itemValue="TRANSPORTE" itemLabel="Transporte" />
+                        <f:selectItem itemValue="COMERCIO" itemLabel="Comércio" />
+                          <f:selectItem itemValue="CONFECÇÃO" itemLabel="Confecção" />
+                        <f:selectItem itemValue="SEGURANÇA" itemLabel="Segurança" />
+                        <f:selectItem itemValue="CONSTRUÇÃO" itemLabel="Construção e Reforma" />
+                         <f:selectItem itemValue="EDUCAÇÃO" itemLabel="Professor particular" />
+                   
+                    </p:selectOneMenu>
+
+                    
+                  
+                    <p:outputLabel value="Tipo de Pagamento:" for="anuncioTipoPagamento" />
+                    <p:selectOneMenu id="anuncioTipoPagamento" value="#{gerenteUsuario.anuncio.anuncioTipoPagamento}"  >
+                        <f:selectItem itemValue="CARTÃO DE CREDITO" itemLabel="Cartão de Credito" />
+                        <f:selectItem itemValue="BOLETO BANCARIO" itemLabel="Dinheiro" />
+                        <f:selectItem itemValue="CARTAO DE DEBITO" itemLabel="Cartão de Debito" />
+                      
+                    </p:selectOneMenu>  
+                    
+                    <p:outputLabel value="Valor:" for="anuncioValor" />
+                    <p:inputText id="anuncioValor" value="#{gerenteUsuario.anuncio.anuncioValor}" title="AnuncioValor" />
+                   
+                    <p:outputLabel value="AnuncioDescricao:" for="anuncioDescricao" />
+                    <p:inputTextarea rows="4" cols="30" id="anuncioDescricao" value="#{gerenteUsuario.anuncio.anuncioDescricao}" title="AnuncioDescricao" />
+                    
+                   
+                    <p:outputLabel value="Tempo de Anuncio:" for="anuncioTempo" />
+                    <p:inputText id="anuncioTempo" value="#{gerenteUsuario.anuncio.anuncioTempo}" title="AnuncioTempo" />
+                   
+                    <p:outputLabel value="Nivel:" for="anuncioNivel" />
+                 <p:selectOneMenu id="anuncioNivel" value="#{gerenteUsuario.anuncio.anuncioNivel}"  >
+                        <f:selectItem itemValue="BÁSICO" itemLabel="Básico" />
+                        <f:selectItem itemValue="PROFISSIONAL" itemLabel="Profissional" />
+                        <f:selectItem itemValue="ESPECIALISTA" itemLabel="Profissional Especializado" />                      
+                     </p:selectOneMenu>      
+                    
+                    <p:outputLabel value="Local de atuação :" for="anuncioEndereco" />
+                    <p:inputText id="anuncioEndereco" value="#{gerenteUsuario.anuncio.anuncioEndereco}" title="AnuncioEndereco" />
+                    <p:outputLabel value="Experiência:" for="anuncioExperiencia" />
+                    <p:inputText id="anuncioExperiencia" value="#{gerenteUsuario.anuncio.anuncioExperiencia}" title="AnuncioExperiencia" />
+                  
+                    <p:commandButton value="SALVAR" action="#{gerenteUsuario.editarAnuncio()}"  ></p:commandButton>
+            
+                </p:panelGrid>
+             
+             
+             
+</p:dialog>  
+         
+         
+    
+     </h:form>
+ </f:view>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </h:body>
+</html>
+

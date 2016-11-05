@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css"  />
+
+        <h:outputStylesheet library="css" name="http://v4.pingendo.com/assets/bootstrap/themes/default.css"  />
+     
+
+
+        
+    </h:head>
+    <h:body>
+
+
+
+
+
+
+ <!-- BARRA DE FERRAMENTAS DO TOPO DA PAGINA  -->
+ 
+        
+         <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs" draggable="true">
+            
+			
+			
+			<li class="nav-item">
+              <a href="index.html" class="active nav-link">Home</a>
+            </li>
+            
+			   <li class="nav-item">
+              <a href="conteudoFiltro.html" class="nav-link" >Categorias</a>
+            </li>
+			
+             <li class="nav-item">
+              <a href="conteudoFiltro.html" class="nav-link" >Colaboradores</a>
+            </li>
+            
+			<li class="nav-item">
+              <a href="anunciante.html" class="nav-link">Portifólios</a>
+            </li>
+			   
+				
+			
+			  <li class="nav-item">
+              <a href="areaUsuario.html" class="nav-link">Area do Usuário</a>
+            </li>
+			
+			
+	
+					  <li class="nav-item">
+              <a href="servicos.html" class="nav-link">Serviços</a>
+            </li>
+		
+
+
+		
+			
+				   <li class="nav-item">
+              <a href="suporte.html" class="nav-link">Suporte</a>
+            </li>
+			
+			
+				   <li class="nav-item">
+              <a href="tutorial.html" class="nav-link">App</a>
+            </li>
+			
+		
+			
+			  <li class="nav-item">
+              <a href="login.html" class="nav-link">Login</a>
+            </li>
+			
+			
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+ <!-- BANNER  DE APRESENTACAO DA PAGINA -->
+  
+  <div class="section section-fill-height section-opaque-dark text-xs-center" draggable="true">
+
+  <div class="background-image" style="background-image: url(&quot;http://v4.pingendo.com/assets/photos/business/cover-1.jpg&quot;);"></div>
+
+    <div class="container">
+
+	<div class="row">
+      
+	  <div class="col-md-12">
+        
+      	<h1 class="display-1 pi-draggable pi-item text-inverse" draggable="true">VIVO DE BICO</h1>
+          <a href="#" class="btn btn-lg btn-secondary-outline m-y-lg">Quero Anúnciar</a>
+          <a href="#" class="btn btn-lg btn-secondary-outline m-y-lg">Quero Trabalhar</a>
+        
+		
+		</div>
+      </div>
+    </div>
+  </div>
+     
+        
+        
+        
+        
+        
+        <h:form>
+        
+            <p:messages  autoUpdate="true" />
+            
+            <h:panelGrid columns="2">
+                <p:outputLabel for="contaEmail" value="Email" />
+                <p:inputText id="contaEmail" value="#{gerenteDeSeguranca.conta.contaEmail}" required="true" />
+                
+                
+                 <p:outputLabel for="contaSenha" value="Senha" />
+                 <p:inputText id="contaSenha" value="#{gerenteDeSeguranca.conta.contaSenha}" required="true" />
+                
+                
+                <h:column />
+                <p:commandButton icon="ui-icon-key" value="Logar"  action="#{gerenteDeSeguranca.iniciarSessao()}" />
+                
+            </h:panelGrid>
+                <p:separator />
+                
+            
+            
+        </h:form>
+    </h:body>
+</html>
+

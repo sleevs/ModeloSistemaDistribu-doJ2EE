@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        
+         
+    </h:head>
+    <h:body>
+        
+        
+        <h:form>
+    <p:messages autoUpdate="true" />
+ 
+    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+     
+         <h:outputText value="Nome:" />
+            <h:outputText value="#{gerenteUsuario.conta.contaNome}" />
+
+
+            <h:outputText value="Id:" />
+            <h:outputText value="#{gerenteUsuario.conta.contaId}" />
+
+            <h:outputText value="Email" />
+            <h:outputText value="#{gerenteUsuario.conta.contaEmail}" />
+
+            <h:outputText value="Tipo:" />
+            <h:outputText value="#{gerenteUsuario.conta.contaTipo}" />
+    </h:panelGrid>
+ 
+    <p:commandButton value="Visualizar Proposta" update="display" oncomplete="PF('dlg').show()" icon="ui-icon-check" />
+ 
+    <p:dialog header="Values" modal="true" showEffect="bounce" widgetVar="dlg" resizable="false">
+        <p:panelGrid columns="2" id="display" columnClasses="label,value">
+            <h:outputText value="Email para Contato:" />
+            <h:outputText value="#{gerenteUsuario.anuncio.contaContaId.contaEmail}" />
+ 
+            <h:outputText value="Numero:" />
+            <h:outputText value="#{gerenteUsuario.anuncio.anuncioId}" />
+ 
+            <h:outputText value="Endereço" />
+            <h:outputText value="#{gerenteUsuario.anuncio.contaContaId.contaEndereco}" />
+ 
+            <h:outputText value="Descrição:" />
+            <h:outputText value="#{gerenteUsuario.anuncio.contaContaId.contaDescricao}" />
+        </p:panelGrid>
+    </p:dialog>
+</h:form>
+        
+        
+        
+    </h:body>
+</html>
+

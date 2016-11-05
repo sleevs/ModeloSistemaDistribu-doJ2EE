@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        
+    </h:head>
+    <h:body>
+     
+        <f:view>
+
+
+            <h:form  >
+                <h1><h:outputText value="Editar Anuncio"/></h1>
+                <p:panelGrid columns="2" >
+       
+                    
+                       
+                    <p:outputLabel  id="anuncioId" value="#{gerenteConta.anuncio.anuncioId}"  />
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p:outputLabel value="Titulo:" for="anuncioTitulo" />
+                    <p:inputText id="anuncioTitulo" value="#{gerenteConta.anuncio.anuncioTitulo}" title="AnuncioTitulo" />
+
+
+                    <p:outputLabel value="Tipo:" for="anuncioTipo" />
+                    <p:selectOneMenu id="anuncioTipo" value="#{gerenteConta.anuncio.anuncioTipo}"  >
+                        <f:selectItem itemValue="DIARIA" itemLabel="Diária" />
+                        <f:selectItem itemValue="MENSAL" itemLabel="Mensal" />
+                        <f:selectItem itemValue="QUINZENA" itemLabel="Quinzenal" />
+                        <f:selectItem itemValue="PRECO FIXO" itemLabel="Moto" />
+                        <f:selectItem itemValue="PROJETO" itemLabel="Caminhão" />
+                        <f:selectItem itemValue="CLT" itemLabel="CLT" />
+                        <f:selectItem itemValue="FREELANCER" itemLabel="Freelancer" />
+                        <f:selectItem itemValue="PESSOA JURIDICA" itemLabel="Pessoa Jurídica" />
+                    </p:selectOneMenu>
+
+
+                    <p:outputLabel value="Categoria:" for="anuncioCategoria:" />
+                    <p:selectOneMenu id="anuncioCategoria" value="#{gerenteConta.anuncio.anuncioCategoria}"  >
+                        <f:selectItem itemValue="TRANSPORTE" itemLabel="Transporte" />
+                        <f:selectItem itemValue="COMERCIO" itemLabel="Comércio" />
+                        <f:selectItem itemValue="CONFECCAO" itemLabel="Confecção" />
+                        <f:selectItem itemValue="SEGURANCA" itemLabel="Segurança" />
+                        <f:selectItem itemValue="CONSTRUCÃO" itemLabel="Construção e Reforma" />
+                        <f:selectItem itemValue="EDUCACAO" itemLabel="Professor particular" />
+
+                    </p:selectOneMenu>
+
+
+
+                    <p:outputLabel value="Tipo de Pagamento:" for="anuncioTipoPagamento" />
+                    <p:selectOneMenu id="anuncioTipoPagamento" value="#{gerenteConta.anuncio.anuncioTipoPagamento}"  >
+                        <f:selectItem itemValue="CARTAO DE CREDITO" itemLabel="Cartão de Credito" />
+                        <f:selectItem itemValue="BOLETO BANCARIO" itemLabel="Dinheiro" />
+                        <f:selectItem itemValue="CARTAO DE DEBITO" itemLabel="Cartão de Debito" />
+
+                    </p:selectOneMenu>  
+
+                    <p:outputLabel value="Valor:" for="anuncioValor" />
+                    <p:inputText id="anuncioValor" value="#{gerenteConta.anuncio.anuncioValor}" title="AnuncioValor" />
+
+                    <p:outputLabel value="AnuncioDescricao:" for="anuncioDescricao" />
+                    <p:inputTextarea rows="4" cols="30" id="anuncioDescricao" value="#{gerenteConta.anuncio.anuncioDescricao}" title="AnuncioDescricao" />
+
+
+                    <p:outputLabel value="Tempo de Anuncio:" for="anuncioTempo" />
+                    <p:inputText id="anuncioTempo" value="#{gerenteConta.anuncio.anuncioTempo}" title="AnuncioTempo" />
+
+                    <p:outputLabel value="Nivel:" for="anuncioNivel" />
+                    <p:selectOneMenu id="anuncioNivel" value="#{gerenteConta.anuncio.anuncioNivel}"  >
+                        <f:selectItem itemValue="BASICO" itemLabel="Básico" />
+                        <f:selectItem itemValue="PROFISSIONAL" itemLabel="Profissional" />
+                        <f:selectItem itemValue="ESPECIALISTA" itemLabel="Profissional Especializado" />                      
+                    </p:selectOneMenu>      
+
+                    <p:outputLabel value="Local de atuação :" for="anuncioEndereco" />
+                    <p:inputText id="anuncioEndereco" value="#{gerenteConta.anuncio.anuncioEndereco}" title="AnuncioEndereco" />
+       
+                    <p:outputLabel value="Experiência:" for="anuncioExperiencia" />
+                    <p:inputText id="anuncioExperiencia" value="#{gerenteConta.anuncio.anuncioExperiencia}" title="AnuncioExperiencia" />
+
+                    <p:commandButton value="SALVAR" action="#{gerenteConta.editarAnuncio()}"  ></p:commandButton>
+
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

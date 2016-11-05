@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Editar Conta"/></h1>
+                <p:panelGrid columns="2">
+                   
+                    
+                   <p:outputLabel value="ContaTipo:" for="contaTipo" />
+                    <p:inputText id="contaTipo" value="#{gerenteUsuario.conta.contaTipo}" title="ContaTipo" />
+                    
+                    <p:outputLabel value="ContaCategoria:" for="contaCategoria" />
+                    <p:inputText id="contaCategoria" value="#{gerenteUsuario.conta.contaCategoria}" title="ContaCategoria" />
+                 
+                    <p:outputLabel value="ContaEmail:" for="contaEmail" />
+                    <p:inputText id="contaEmail" value="#{gerenteUsuario.conta.contaEmail}" title="ContaEmail" />
+                    <p:outputLabel value="ContaSenha:" for="contaSenha" />
+                    <p:inputText id="contaSenha" value="#{gerenteUsuario.conta.contaSenha}" title="ContaSenha" />
+                    <p:outputLabel value="ContaNome:" for="contaNome" />
+                    <p:inputText id="contaNome" value="#{gerenteUsuario.conta.contaNome}" title="ContaNome" />
+                    <p:outputLabel value="ContaSobrenome:" for="contaSobrenome" />
+                    <p:inputText id="contaSobrenome" value="#{gerenteUsuario.conta.contaSobrenome}" title="ContaSobrenome" />
+                    <p:outputLabel value="ContaNascimento:" for="contaNascimento" />
+                    <p:inputText id="contaNascimento" value="#{gerenteUsuario.conta.contaNascimento}" title="ContaNascimento" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </p:inputText>
+                    <p:outputLabel value="ContaSexo:" for="contaSexo" />
+                    <p:inputText id="contaSexo" value="#{gerenteUsuario.conta.contaSexo}" title="ContaSexo" />
+                    <p:outputLabel value="ContaTelefone:" for="contaTelefone" />
+                    <p:inputTextarea rows="4" cols="30" id="contaTelefone" value="#{gerenteUsuario.conta.contaTelefone}" title="ContaTelefone" />
+                    <p:outputLabel value="ContaFoto:" for="contaFoto" />
+                    <p:inputText id="contaFoto" value="#{gerenteUsuario.conta.contaFoto}" title="ContaFoto" />
+                    <p:outputLabel value="ContaCpf:" for="contaCpf" />
+                    <p:inputText id="contaCpf" value="#{gerenteUsuario.conta.contaCpf}" title="ContaCpf" />
+                    <p:outputLabel value="ContaCnpj:" for="contaCnpj" />
+                    <p:inputText id="contaCnpj" value="#{gerenteUsuario.conta.contaCnpj}" title="ContaCnpj" />
+                    <p:outputLabel value="ContaCep:" for="contaCep" />
+                    <p:inputText id="contaCep" value="#{gerenteUsuario.conta.contaCep}" title="ContaCep" />
+                    <p:outputLabel value="ContaEndereco:" for="contaEndereco" />
+                    <p:inputText id="contaEndereco" value="#{gerenteUsuario.conta.contaEndereco}" title="ContaEndereco" />
+                    <p:outputLabel value="ContaBairro:" for="contaBairro" />
+                    <p:inputText id="contaBairro" value="#{gerenteUsuario.conta.contaBairro}" title="ContaBairro" />
+                    <p:outputLabel value="ContaCidade:" for="contaCidade" />
+                    <p:inputText id="contaCidade" value="#{gerenteUsuario.conta.contaCidade}" title="ContaCidade" />
+                    <p:outputLabel value="ContaUf:" for="contaUf" />
+                    <p:inputText id="contaUf" value="#{gerenteUsuario.conta.contaUf}" title="ContaUf" />
+                    <p:outputLabel value="ContaPais:" for="contaPais" />
+                    <p:inputText id="contaPais" value="#{gerenteUsuario.conta.contaPais}" title="ContaPais" />
+                   
+                    <p:outputLabel value="ContaVideo:" for="contaVideo" />
+                    <p:inputText id="contaVideo" value="#{gerenteUsuario.conta.contaVideo}" title="ContaVideo" />
+                        <p:inputText id="contaLongetude" value="#{gerenteUsuario.conta.contaLongetude}" title="ContaLongetude" />
+                    <p:outputLabel value="ContaImagens:" for="contaImagens" />
+                    <p:inputText id="contaImagens" value="#{gerenteUsuario.conta.contaImagens}" title="ContaImagens" />
+               
+                    
+                    
+                    <p:commandButton value="GRAVAR" action=""></p:commandButton>
+                
+                 
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+
+        
+    </h:body>
+</html>
+

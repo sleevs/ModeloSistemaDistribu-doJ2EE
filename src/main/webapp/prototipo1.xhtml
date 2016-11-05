@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+       <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+           
+           
+           
+        </h:head>
+
+        <h:body>
+
+            
+            
+            <f:view>
+
+
+                <h:form>
+                       
+                    <h:link value="ADICIONAR" outcome="filtro.xhtml" ></h:link>
+                    <h1><h:outputText value="Registro de Contas Vivo de Bico"/></h1>
+                  
+                    <p:dataTable value="#{gerenteConta.listarContas()}" var="item">
+                      
+                          <p:column>
+                            <f:facet name="header">
+                              OPÇÕES
+                            </f:facet>
+                              <h:commandLink value="ADICIONAR" action="#{gerenteConta.deletarConta(item)}" onclick="return confirm('Você confirma essa ação?')"></h:commandLink>
+                            
+                        </p:column>
+                        
+                            <p:column>
+                            <f:facet name="header">
+                              OPÇÕES
+                            </f:facet>
+                              <h:commandLink value="APAGAR" action="#{gerenteConta.deletarConta(item)}" onclick="return confirm('Você confirma essa ação?')"></h:commandLink>
+                            
+                        </p:column>
+                        
+                        
+                            <p:column>
+                            <f:facet name="header">
+                              OPÇÕES
+                            </f:facet>
+                                <h:commandLink value="LOGAR" action="#{gerenteConta.iniciarSessao(item)}" ></h:commandLink>
+                            
+                        </p:column>
+                        
+                        
+                        <p:column>
+                         <f:facet name="header">
+                              OPÇÕES
+                            </f:facet>
+                              <h:commandLink value="EDITAR" action="#{gerenteConta.editarConta(item)}" ></h:commandLink>
+                        
+                        </p:column>
+                        
+                             <p:column>
+                         <f:facet name="header">
+                              OPÇÕES
+                            </f:facet>
+                                 <h:commandLink value="ENCONTRAR CONTA" action="#{gerenteConta.encontrarConta(item)}" ></h:commandLink>
+                        
+                        </p:column>
+                        
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaId"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaData"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaData}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaTipo"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaTipo}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaCategoria"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaCategoria}"/>
+                        </p:column>
+                       
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaEmail"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaEmail}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaSenha"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaSenha}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaNome"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaNome}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaSobrenome"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaSobrenome}"/>
+                        </p:column>
+                  
+                        
+                        
+                        
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaEndereco"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaEndereco}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaBairro"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaBairro}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaCidade"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaCidade}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaUf"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaUf}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ContaPais"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contaPais}"/>
+                        </p:column>
+                    
+                  
+                            
+                            
+                    </p:dataTable>
+                    
+                </h:form>
+            
+            </f:view>
+            
+            
+
+            
+            
+       
+        </h:body>
+
+</html>
+
